@@ -100,6 +100,16 @@ class Snake {
     this.direction = newDirection;
   }
 
+  isOccupying(i,j) {
+    let result = false;
+    this.segments.forEach((coord) => {
+      if ((i === coord.i) && (j === coord.j)) {
+        result = true;
+      }
+    });
+    return result;
+  }
+
   toCoord(direction) {
     let pos;
     switch(direction) {
@@ -115,12 +125,6 @@ class Snake {
   }
 }
 
-// let snake = new Snake();
-// snake.move();
-// snake.move();
-// snake.turn("S");
-// snake.move();
-// console.log(snake.segments)
 
 
 
